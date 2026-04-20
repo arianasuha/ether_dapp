@@ -1,0 +1,78 @@
+.background {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #002130;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text {
+  max-width: 654px;
+  font-family: 'Lexend Exa', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 75px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 0 40px 0; /* Creates space between text and button */
+}
+
+.button {
+  /* This container helps with the positioning if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttontext {
+  width: 243px;
+  height: 61px;
+  background: #FFFFFF;
+  border-radius: 70px;
+  border: none;
+  cursor: pointer;
+  
+  /* Font Styling */
+  font-family: 'LINE Seed JP', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 28px;
+  color: #00131E;
+  
+  /* Transition for a better UX */
+  transition: all 0.2s ease-in-out;
+}
+
+.buttontext:hover {
+  background: #e6e6e6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttontext:active {
+  transform: translateY(0);
+}
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #ECECEC;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .text {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}

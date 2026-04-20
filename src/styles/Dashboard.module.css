@@ -1,0 +1,331 @@
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #002130;
+  color: #ECECEC;
+  font-family: 'LINE Seed JP', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header & Profile Section --- */
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid #ECECEC; /* Line 1 in Figma */
+}
+
+.mainTitle {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0;
+  color: #ECECEC;
+}
+
+.profileGrid {
+  height: 106px; /* 184px - 78px */
+  display: flex;
+  align-items: center;
+  padding: 0 108px;
+  gap: 40px;
+  border-bottom: 1px solid #ECECEC; /* Line 2 in Figma */
+}
+
+.profileStat {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileStat strong {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.profileStat p {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+}
+
+.repScore {
+  font-weight: 700 !important;
+}
+
+/* --- Navigation & Post Button --- */
+
+.navbar {
+  height: 101px; /* 285px - 184px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 108px;
+  border-bottom: 1px solid #ECECEC; /* Line 3 in Figma */
+}
+
+.navGroup {
+  display: flex;
+  gap: 120px;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  color: #ECECEC;
+  font-family: 'LINE Seed JP';
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 0;
+}
+
+.navBtn.active {
+  font-weight: 700;
+}
+
+/* White line under active nav item */
+.navBtn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -34px; /* Align with Figma's Line 3 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 127px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.postBtn {
+  width: 178px;
+  height: 38px;
+  background: #FFFFFF;
+  border-radius: 70px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  color: #00131E;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+/* --- Filter Section --- */
+
+.filterSection {
+  padding: 40px 108px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.selectWrapper {
+  background: #F7F7F7;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 223px;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectWrapper label {
+  font-weight: 700;
+  font-size: 16px;
+  color: #13252E;
+  margin-bottom: 4px;
+}
+
+.selectWrapper select {
+  background: transparent;
+  border: none;
+  font-family: 'LINE Seed JP';
+  font-size: 18px;
+  color: #13252E;
+  outline: none;
+  cursor: pointer;
+}
+
+/* --- Mission Cards --- */
+
+.missionList {
+  padding: 40px 108px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.missionCard {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 30px;
+  color: #13252E;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.missionId {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.statusBadge {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.infoRow {
+  font-size: 18px;
+}
+
+.infoRow span {
+  font-weight: 400;
+}
+
+.infoRow strong {
+  font-weight: 700;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detailsBtn {
+  width: 127px;
+  height: 40px;
+  background: #002130;
+  border-radius: 28px;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- States (Error, Empty, Loader) --- */
+
+.error {
+  margin: 40px auto;
+  width: 531px;
+  height: 42px;
+  background: #980000;
+  border-radius: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F7F7F7;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.emptyState {
+  margin: 40px auto;
+  width: 531px;
+  height: 42px;
+  background: #ECECEC;
+  border-radius: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00131E;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #ECECEC;
+}
+
+/* Responsive fixes */
+@media (max-width: 1024px) {
+  .profileGrid, .navbar, .missionList {
+    padding: 0 40px;
+  }
+  .missionList {
+      padding-top: 40px;
+  }
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.actionButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailsBtn, .approveBtn, .disputeBtn, .deliveredBtn {
+  width: 180px; /* Aligned with buttons in images */
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'LINE Seed JP', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  background: #002130;
+  color: #FFFFFF;
+  transition: opacity 0.2s;
+}
+
+.approveBtn, .disputeBtn, .deliveredBtn {
+  background: #002130; /* Primary dark button style from images */
+}
+
+.detailsBtn:hover, .approveBtn:hover {
+  opacity: 0.9;
+}
+
+.successMsg {
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.errorMsg {
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+}
