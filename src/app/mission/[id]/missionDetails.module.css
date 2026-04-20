@@ -1,0 +1,464 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #002130;
+  overflow-x: hidden;
+}
+
+.headerLine {
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  left: 0px;
+  top: 78px;
+  border: 1px solid #ECECEC;
+}
+
+.pageTitle {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 20px;
+  font-family: 'LINE Seed JP', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #ECECEC;
+}
+
+.backBtn {
+  position: absolute;
+  left: 102px;
+  top: 27px;
+  background: none;
+  border: none;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 20px;
+  color: #ECECEC;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: #FFFFFF;
+  margin-right: 10px;
+  position: relative;
+}
+
+.arrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #FFFFFF;
+  border-top: 2px solid #FFFFFF;
+  transform: rotate(-45deg);
+}
+
+.reportBar {
+  position: absolute;
+  width: 1084px;
+  height: 324px;
+  left: 98px;
+  top: 108px;
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+.missionIdLabel {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 20px;
+  color: #13252E;
+}
+
+.statusLabel {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 18px;
+  color: #13252E;
+}
+
+.detailItem {
+  position: absolute;
+  left: 20px;
+  font-family: 'LINE Seed JP';
+  font-weight: 400;
+  font-size: 18px;
+  color: #13252E;
+}
+
+/* Precise Figma offsets from the Rectangle 86 top (108px) */
+.detailItem:nth-child(1) { top: 57px; }  /* Category */
+.detailItem:nth-child(2) { top: 91px; }  /* Max Budget */
+.detailItem:nth-child(3) { top: 126px; } /* Region */
+.detailItem:nth-child(4) { top: 161px; } /* Donor */
+.detailItem:nth-child(5) { top: 196px; } /* Provider */
+.detailItem:nth-child(6) { top: 231px; } /* Agreed Cost */
+.detailItem:nth-child(7) { top: 266px; } /* Complete */
+
+.submitPledgeBtn {
+  position: absolute;
+  width: 203px;
+  height: 40px;
+  left: 861px;
+  top: 103px;
+  background: #002130;
+  border-radius: 28px;
+  color: #FFFFFF;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Bid Form Group */
+.bidFormContainer {
+  position: absolute;
+  width: 456px;
+  height: 133px;
+  left: 608px;
+  top: 153px;
+  background: #002130;
+  border-radius: 15px;
+}
+
+.inputWrapper {
+  position: absolute;
+  width: 416px;
+  height: 42px;
+  left: 20px;
+  top: 15px;
+  border: 2px solid #ECECEC;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.inputLabel {
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  color: #ECECEC;
+  margin-right: 10px;
+}
+
+.bidInput {
+  background: transparent;
+  border: none;
+  color: #ECECEC;
+  font-family: 'LINE Seed JP';
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+}
+
+.submitBidBtn {
+  position: absolute;
+  width: 416px;
+  height: 46px;
+  left: 20px;
+  top: 72px;
+  background: #ECECEC;
+  border-radius: 37px;
+  border: none;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  color: #002130;
+  cursor: pointer;
+}
+
+.errorText {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 138px;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  color: #980000;
+}
+
+.successText {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 138px;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  color: #2C7701;
+}
+
+.loader {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.submitPledgeBtn:disabled {
+  cursor: not-allowed;
+  background: #555 !important;
+  color: #999 !important;
+}
+
+.submitBidBtn:disabled {
+  background: #999;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.warningText {
+  color: #980000;
+  font-family: 'LINE Seed JP';
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Ensure the Bid Form Container stays visible below the toggle */
+.bidFormContainer {
+  position: absolute;
+  width: 456px;
+  height: 133px;
+  left: 608px;
+  top: 153px;
+  background: #002130;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+/* Container for the pledge cards that appear below the main card */
+.pledgeSectionContainer {
+  margin-top: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+/* Main Mission Card View Pledges Button */
+.viewPledgesBtn {
+  position: absolute;
+  width: 203px;
+  height: 40px;
+  left: 861px;
+  top: 246px; /* Positioned at Figma top 354px - card top 108px */
+  background: #002130;
+  border-radius: 28px;
+  color: #FFFFFF;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Each Pledge Card */
+.pledgeBar {
+  position: relative;
+  width: 1084px;
+  min-height: 236px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.pledgeTitle {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 20px;
+  color: #13252E;
+}
+
+.bidNumber { position: absolute; left: 20px; top: 57px; color: #13252E; font-size: 18px; }
+.bidAgency { position: absolute; left: 20px; top: 91px; color: #13252E; font-size: 18px; }
+.bidAmount { position: absolute; left: 20px; top: 126px; color: #13252E; font-size: 18px; }
+
+.acceptPledgeBtn {
+  position: absolute;
+  width: 227px;
+  height: 40px;
+  right: 20px;
+  top: 15px;
+  background: #002130;
+  border-radius: 28px;
+  color: #FFFFFF;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Fund Form Styling (Inside Pledge Card) */
+.fundFormBox {
+  position: absolute;
+  width: 456px;
+  height: 153px;
+  right: 20px;
+  top: 65px;
+  background: #002130;
+  border-radius: 15px;
+}
+
+.fundInputWrapper {
+  box-sizing: border-box;
+  position: absolute;
+  width: 416px;
+  height: 42px;
+  left: 20px;
+  top: 15px;
+  border: 2px solid #ECECEC;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.fundLabel {
+  color: #ECECEC;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.fundInput {
+  background: transparent;
+  border: none;
+  color: #ECECEC;
+  outline: none;
+  width: 100%;
+}
+
+.fundMissionBtn {
+  position: absolute;
+  width: 416px;
+  height: 46px;
+  left: 20px;
+  top: 72px;
+  background: #ECECEC;
+  border-radius: 37px;
+  border: none;
+  font-weight: 700;
+  color: #002130;
+  cursor: pointer;
+}
+
+.excessNote {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 125px;
+  color: #ECECEC;
+  font-size: 14px;
+}
+
+.successText { color: #2C7701; text-align: center; margin-top: 135px; font-weight: 700; }
+.errorText { color: #980000; text-align: center; margin-top: 135px; font-weight: 700; }
+
+/* Arbiter Specific Styles */
+
+.resolveDisputeBtn {
+  position: absolute;
+  width: 203px;
+  height: 40px;
+  left: 861px;
+  top: 103px; /* Matches Figma Rectangle 90 position */
+  background: #002130;
+  border-radius: 28px;
+  color: #FFFFFF;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.resolveFormContainer {
+  position: absolute;
+  width: 456px;
+  height: 142px;
+  left: 608px; /* Adjusted to fit layout */
+  top: 153px;
+  background: #002130;
+  border-radius: 15px;
+  padding: 15px;
+  z-index: 20;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.radioCircle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ECECEC;
+  border-radius: 50%;
+}
+
+.radioLabel {
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  color: #ECECEC;
+}
+
+.resolveSubmitBtn {
+  width: 416px;
+  height: 46px;
+  background: #ECECEC;
+  border-radius: 37px;
+  border: none;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  color: #002130;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.successTextArbiter {
+  color: #2C7701;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.errorTextArbiter {
+  color: #980000;
+  font-family: 'LINE Seed JP';
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}

@@ -146,11 +146,11 @@ export const bidOnMission = async (missionId, bidAmount) => {
   }
 };
 
-export const fundMission = async (missionId, bidIndex) => {
+export const fundMission = async (missionId, bidIndex, amountInEth) => {
   try {
     const contract = await getContract();
     const tx = await contract.fundMission(missionId, bidIndex, {
-      value: ethers.parseEther(amountInEth)
+      value: ethers.parseEther(amountInEth.toString())
     });
     const receipt = await tx.wait();
 

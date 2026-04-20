@@ -2,6 +2,7 @@
 import { useWeb3 } from "@/context/Web3Context";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import styles from "@/styles/HomePage.module.css";
 
 export default function Home() {
   const { account, user, loading, connectWallet } = useWeb3();
@@ -20,15 +21,15 @@ export default function Home() {
     }
   }, [loading, account, user, router]);
 
-  if (loading) return <div>Syncing with Ganache...</div>;
+  if (loading) return <div className={styles.loader}>Syncing with Ganache...</div>;
 
   return (
-    <main>
-      <h1>Conflict Zone Aid Platform</h1>
+    <main className={styles.background}>
+      <h1 className={styles.text}>Conflict Zone Aid Platform</h1>
       
       {!account && (
-        <div>
-          <button onClick={connectWallet}>
+        <div className={styles.button}>
+          <button className={styles.buttontext} onClick={connectWallet}>
             Connect MetaMask
           </button>
         </div>

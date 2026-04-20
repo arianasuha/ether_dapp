@@ -19,12 +19,9 @@ export const Web3Provider = ({ children }) => {
       const profile = await getUserProfile(address);
       if (profile && profile.isRegistered) {
         setUser(profile);
-        localStorage.setItem("isRegistered", "true");
-        localStorage.setItem("userRole", profile.role.toString());
         return profile;
       } else {
         setUser(null);
-        localStorage.clear();
         return null;
       }
     } catch (err) {
@@ -85,7 +82,6 @@ export const Web3Provider = ({ children }) => {
         } else {
           setAccount(null);
           setUser(null);
-          localStorage.clear();
           router.push("/");
         }
         setLoading(false);
@@ -105,7 +101,7 @@ export const Web3Provider = ({ children }) => {
   
   // Trasmitter: transmitting the values to the whole web
   return (
-    <Web3Context.Provider value={{ account, user, loading, connectWallet }}>
+    <Web3Context.Provider value={{ account, user, loading, connectWallet, fetchProfile }}>
       {children}
     </Web3Context.Provider>
   );
